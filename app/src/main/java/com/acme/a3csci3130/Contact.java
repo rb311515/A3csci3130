@@ -15,25 +15,36 @@ import java.util.Map;
 public class Contact implements Serializable {
 
     public  String uid;
+    public  String number;
     public  String name;
-    public  String email;
+    public  String primBus;
+    public  String address;
+    public  String province;
+
+
 
     public Contact() {
         // Default constructor required for calls to DataSnapshot.getValue
     }
 
-    public Contact(String uid, String name, String email){
+    public Contact(String uid, String number, String name, String primBus, String address, String province){
         this.uid = uid;
+        this.number = number;
         this.name = name;
-        this.email = email;
+        this.primBus = primBus;
+        this.address = address;
+        this.province = province;
     }
 
     @Exclude
     public Map<String, Object> toMap(){
         HashMap<String, Object> result = new HashMap<>();
         result.put("uid", uid);
+        result.put("number", number);
         result.put("name", name);
-        result.put("email", email);
+        result.put("primary business", primBus);
+        result.put("address", address);
+        result.put("province", province);
 
         return result;
     }

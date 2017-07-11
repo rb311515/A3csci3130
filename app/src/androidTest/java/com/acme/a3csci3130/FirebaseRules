@@ -1,0 +1,28 @@
+/*
+*example of the rules that were applied to the firebase database
+*/
+{
+  "rules": {
+    ".read": "true",
+    ".write": "true",
+    "contacts": {
+            "$contact": {
+                "number": {
+                    ".validate": "newData.isString() && newData.val().matches(/^[0-9]{9}/) && newData.val().length < 10"
+                },
+                "name": {
+                    ".validate": "newData.isString() && newData.val().length < 50"
+                },
+                "primBus": {
+                    ".validate": "newData.isString() && newData.val().matches(/\b(Fisher|Distributor|Processor|Fish Monger)\b/) && newData.val().length < 3"
+                },
+                "address": {
+                    ".validate": "newData.isString() && newData.val().length < 50"
+                },
+                "province": {
+                    ".validate": "newData.isString() && newData.val().matches(/\b|AB|BC|MB|NB|NL|NS|NT|NU|ON|PE|QC|SK|YT|\t|\b/)"
+                }
+            }
+        }
+  }
+}

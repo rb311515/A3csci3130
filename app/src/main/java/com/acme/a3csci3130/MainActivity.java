@@ -9,11 +9,13 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.firebase.ui.database.FirebaseListAdapter;
+import com.google.firebase.analytics.FirebaseAnalytics;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends Activity {
 
-
+    private FirebaseAnalytics mFirebaseAnalytics;
     private ListView contactListView;
     private FirebaseListAdapter<Contact> firebaseAdapter;
 
@@ -28,6 +30,7 @@ public class MainActivity extends Activity {
         //Set-up Firebase
         appData.firebaseDBInstance = FirebaseDatabase.getInstance();
         appData.firebaseReference = appData.firebaseDBInstance.getReference("contacts");
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
         //Get the reference to the UI contents
         contactListView = (ListView) findViewById(R.id.listView);

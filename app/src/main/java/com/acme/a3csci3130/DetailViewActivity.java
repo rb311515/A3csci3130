@@ -1,3 +1,12 @@
+/* July.10/2017 Robert Thomas B00618996
+ * the detail view activity will open up when a contact is selected from the list that is populated from the main activity.
+ * This was made from the example gitHub repository that was provided.
+ * The Update and Delete Contact methods were added
+ * @Update is the replacing of information for a uID with the info given
+ * @Delete is to remove the entry at a given uID
+ *
+ * */
+
 package com.acme.a3csci3130;
 
 import android.app.Activity;
@@ -36,6 +45,7 @@ public class DetailViewActivity extends Activity {
         }
     }
 
+    //@update
     public void updateContact(View v){
         //TODO: Update contact funcionality
         appState = ((MyApplicationData) getApplicationContext());
@@ -53,7 +63,7 @@ public class DetailViewActivity extends Activity {
         finish();
         updated = true;
     }
-
+    //@delete
     public void eraseContact(View v)
     {
         //TODO: Erase contact functionality

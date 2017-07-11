@@ -1,3 +1,7 @@
+/* July 10th/2017 Robert Thomas B00618996
+ * the create Contact Activity was edited from the given example in order to have new fields to replace the old ones.
+ * Like number for phone numbers, primBus for the primary business, address for the address, and provience for the provience.
+ * */
 package com.acme.a3csci3130;
 
 import android.app.Activity;
